@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>AI Creator Studio | AuraBlog Admin</title>
+  <meta name="description" content="AI Content Generator Dashboard for AuraBlog. Research trends, customize layouts, and compile articles instantly.">
+  <meta name="robots" content="noindex, nofollow">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css?v=2">
+  <link rel="stylesheet" href="css/main.css?v=2">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%236366f1'/><path d='M30 70V30l40 40V30' stroke='white' stroke-width='10' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>">
+</head>
+<body class="admin-body">
+
+  <!-- Navigation Header -->
+  <header class="navbar-wrapper">
+    <div class="container navbar">
+      <a href="index.html" class="nav-brand" id="logo-link">
+        <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="100" height="100" rx="24" fill="url(#brand-grad)" />
+          <path d="M30 70V30L70 70V30" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="brand-grad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#6366F1" />
+              <stop offset="1" stop-color="#06B6D4" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>Aura</span>Blog <span class="badge badge-primary" style="font-size:10px; margin-left:8px; vertical-align:middle; text-transform:uppercase;">Studio</span>
+      </a>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-controls">
+        <button class="btn btn-outline" id="open-settings-btn" aria-label="API Settings">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px; vertical-align:middle;"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          API Settings
+        </button>
+        
+        <button class="theme-toggle-btn" aria-label="Toggle theme" id="theme-toggle">
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.01c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.37 5.51c-.18-.64-.9-1-1.54-.82-.64.18-1 .9-.82 1.54 1.41 4.97 6 8.52 11.37 8.52.64 0 1.28-.06 1.9-.17.65-.11 1.09-.72.98-1.37-.11-.64-.72-1.09-1.37-.98-.5.09-1.02.14-1.54.14-4.52 0-8.24-3.41-8.98-7.83z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Creator Studio Content Area -->
+  <main class="container fade-in" style="animation-delay: 0.1s; margin-top: var(--space-xl);">
+    <div class="admin-grid">
+      
+      <!-- Left Column: Inputs, Suggesions, and Visualizer -->
+      <section class="admin-control-panel">
+        
+        <!-- API Connection Alert -->
+        <div class="alert alert-warning" id="api-status-alert">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px; vertical-align:middle;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          <strong>API Keys Required:</strong> Please click the "API Settings" button to input your keys. Local fallback mode is active.
+        </div>
+
+        <div class="card admin-card">
+          <h2 class="admin-section-title">1. Research & Select Topic</h2>
+          <p class="admin-section-desc">Click a trending real-time recommendation below to auto-populate the generator prompt, or type your own topic ideas.</p>
+          
+          <div class="trending-suggestions-grid">
+            <button class="trend-card" data-prompt="Draft an article about mastering INP (Interaction to Next Paint) explaining layout shift limits and how to resolve thread bottlenecks.">
+              <span class="trend-category">Performance</span>
+              <h3 class="trend-title">Mastering INP Optimization</h3>
+              <p class="trend-desc">Break down interaction delays and thread yielding strategies.</p>
+            </button>
+            
+            <button class="trend-card" data-prompt="Create a comprehensive guide on implementing CSS Anchor Positioning. Show code examples for responsive dropdowns.">
+              <span class="trend-category">Web Design</span>
+              <h3 class="trend-title">CSS Anchor Positioning Guide</h3>
+              <p class="trend-desc">Explore anchoring tooltips without heavy absolute offset scripts.</p>
+            </button>
+            
+            <button class="trend-card" data-prompt="Explain the core differences between Subgrid and CSS Grid Layouts, detailing alignment fixes and layout inheritances.">
+              <span class="trend-category">SEO & CSS</span>
+              <h3 class="trend-title">CSS Grid vs. Subgrid Power</h3>
+              <p class="trend-desc">Optimize component alignments with nested grid inheritances.</p>
+            </button>
+          </div>
+        </div>
+
+        <!-- Custom Prompt Input -->
+        <div class="card admin-card">
+          <h2 class="admin-section-title">2. Customize Your AI Content Prompt</h2>
+          <p class="admin-section-desc">Steer the generator's tone, author perspective, or add coding requests.</p>
+          
+          <div class="form-group" style="margin-top:var(--space-md);">
+            <label class="form-label" for="ai-prompt-input">Blog Topic & Directive</label>
+            <textarea class="form-control" id="ai-prompt-input" rows="4" placeholder="Enter your prompt. (e.g. Write a guide on Core Web Vitals audit checking. Focus on LCP and CLS. Make the tone highly professional and detailed.)"></textarea>
+          </div>
+          
+          <div class="admin-form-options">
+            <div class="form-group">
+              <label class="form-label" for="author-select">Select Author Profile</label>
+              <select class="form-control" id="author-select" style="padding: var(--space-xs) var(--space-sm);">
+                <option value="Alex Zen">Alex Zen (Technical SEO Lead)</option>
+                <option value="Sarah Rose">Sarah Rose (Creative Design Partner)</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" id="generate-blog-btn" style="align-self:flex-end; margin-bottom:var(--space-lg);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:6px; vertical-align:middle;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Orchestrate AI Pipeline
+            </button>
+          </div>
+        </div>
+
+        <!-- Workflow Visualizer -->
+        <div class="card admin-card">
+          <h2 class="admin-section-title">3. Content Pipeline Visualizer</h2>
+          <p class="admin-section-desc">Watch the active pipeline process your prompt step-by-step.</p>
+          
+          <div class="visualizer-container">
+            <div class="visualizer-node" id="node-trend" data-label="Trend Spied">
+              <div class="node-icon">🔍</div>
+              <div class="node-text">1. Trend Check</div>
+              <div class="node-status">Idle</div>
+            </div>
+            <div class="visualizer-connector" id="connector-1"></div>
+            
+            <div class="visualizer-node" id="node-copy" data-label="HTML Drafted">
+              <div class="node-icon">✍️</div>
+              <div class="node-text">2. AI Copywriter</div>
+              <div class="node-status">Idle</div>
+            </div>
+            <div class="visualizer-connector" id="connector-2"></div>
+            
+            <div class="visualizer-node" id="node-media" data-label="Web Match Found">
+              <div class="node-icon">🖼️</div>
+              <div class="node-text">3. Image Search</div>
+              <div class="node-status">Idle</div>
+            </div>
+            <div class="visualizer-connector" id="connector-3"></div>
+            
+            <div class="visualizer-node" id="node-compile" data-label="Page Output Ready">
+              <div class="node-icon">📦</div>
+              <div class="node-text">4. Code Compiler</div>
+              <div class="node-status">Idle</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Log Terminal Console -->
+        <div class="card admin-card" style="padding:0; overflow:hidden;">
+          <div class="console-header">
+            <span class="console-title">Pipeline Terminal Console</span>
+            <div class="console-dot-group">
+              <span class="console-dot red"></span>
+              <span class="console-dot yellow"></span>
+              <span class="console-dot green"></span>
+            </div>
+          </div>
+          <div class="console-body" id="console-output">
+            <div class="console-line">[SYSTEM] Studio Engine initialized. Waiting for prompt...</div>
+          </div>
+        </div>
+
+      </section>
+      
+      <!-- Right Column: Outputs, Live Previews, Source Code, and Downloads -->
+      <section class="admin-output-panel">
+        
+        <div class="card admin-card" style="display:flex; flex-direction:column; height:100%; min-height:600px; padding:0; overflow:hidden;">
+          <div class="output-tab-header">
+            <button class="output-tab-btn active" data-tab="preview">Live Preview</button>
+            <button class="output-tab-btn" data-tab="code">HTML Source Code</button>
+            <button class="output-tab-btn" data-tab="publish">Download & Publish</button>
+          </div>
+          
+          <div class="output-tab-content active" id="tab-preview">
+            <div class="preview-empty-state" id="preview-empty">
+              <div style="font-size:48px; margin-bottom:var(--space-md);">🔮</div>
+              <h3>Waiting for Generation</h3>
+              <p>Type a prompt and click "Orchestrate AI Pipeline" to draft your blog post. The live render will appear here.</p>
+            </div>
+            <iframe class="preview-iframe" id="article-preview-frame" style="display:none;" title="Article Live Preview Frame"></iframe>
+          </div>
+          
+          <div class="output-tab-content" id="tab-code">
+            <div class="code-empty-state" id="code-empty">
+              <p>Source code will load here upon pipeline compilation.</p>
+            </div>
+            <pre class="code-viewer-pre" id="code-viewer-box" style="display:none;"><code id="code-viewer"></code></pre>
+          </div>
+          
+          <div class="output-tab-content" id="tab-publish">
+            <div class="publish-empty-state" id="publish-empty">
+              <h3>Publishing Workspace</h3>
+              <p>Generate a blog post to unlock publishing instructions and file downloader triggers.</p>
+            </div>
+            <div class="publish-active-panel" id="publish-active" style="display:none; padding:var(--space-xl);">
+              <div class="publish-header-card">
+                <span class="badge badge-success" style="font-size:12px; margin-bottom:var(--space-xs); text-transform:uppercase;">SUCCESSFULLY COMPILED</span>
+                <h3 id="publish-card-title">Mastering INP: The New Core Web Vital</h3>
+                <p id="publish-card-desc">Your SEO article template is packaged and ready to go.</p>
+              </div>
+              
+              <div class="publish-steps-list">
+                <h4 style="font-family:var(--font-heading); margin-bottom:var(--space-sm);">How to publish this article:</h4>
+                <ol style="margin-left:var(--space-lg); line-height:1.6; font-size:var(--fs-sm); color:var(--text-secondary);">
+                  <li style="margin-bottom:var(--space-xs);">Click the **"Download Post HTML"** button below to download the `[slug].html` file.</li>
+                  <li style="margin-bottom:var(--space-xs);">Place the downloaded file inside your project's `/posts/` directory.</li>
+                  <li style="margin-bottom:var(--space-xs);">Commit and push your files to GitHub. GitHub Actions will rebuild your website automatically!</li>
+                </ol>
+              </div>
+              
+              <div class="publish-actions" style="margin-top:var(--space-xl); display:flex; gap:var(--space-md);">
+                <button class="btn btn-primary" id="download-post-file-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:6px; vertical-align:middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  Download Post HTML
+                </button>
+                <button class="btn btn-outline" id="copy-source-code-btn">
+                  Copy Source Code
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- API Settings Modal Dialog -->
+  <div class="modal-overlay" id="settings-modal" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-heading" style="font-family:var(--font-heading); font-weight:800;">Studio API Credentials</h3>
+        <button class="modal-close-btn" id="close-settings-btn" aria-label="Close settings">&times;</button>
+      </div>
+      <div class="modal-body" style="padding:var(--space-lg) 0;">
+        <p style="font-size:var(--fs-xs); color:var(--text-secondary); margin-bottom:var(--space-lg); line-height:1.5;">Your keys are processed locally in your browser and are never sent to external servers. They are stored inside your browser's secure `localStorage` sandbox.</p>
+        
+        <div class="form-group">
+          <label class="form-label" for="gemini-key-input">Google Gemini API Key</label>
+          <input type="password" class="form-control" id="gemini-key-input" placeholder="AI Studio Key (starts with AIza...)">
+          <small style="font-size:10px; color:var(--text-tertiary);">Get one free at <a href="https://aistudio.google.com/" target="_blank" rel="noopener">Google AI Studio</a></small>
+        </div>
+        
+        <div class="form-group" style="margin-top:var(--space-md);">
+          <label class="form-label" for="unsplash-key-input">Unsplash Access Key</label>
+          <input type="password" class="form-control" id="unsplash-key-input" placeholder="Developer Access Key">
+          <small style="font-size:10px; color:var(--text-tertiary);">Get one free at <a href="https://unsplash.com/developers" target="_blank" rel="noopener">Unsplash Developers</a></small>
+        </div>
+      </div>
+      <div class="modal-footer" style="display:flex; justify-content:flex-end; gap:var(--space-sm); border-top:1px solid var(--border-color); padding-top:var(--space-md);">
+        <button class="btn btn-outline" id="clear-keys-btn">Clear Keys</button>
+        <button class="btn btn-primary" id="save-keys-btn">Save Configurations</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand"><span>Aura</span>Blog</div>
+        <p class="footer-desc">A premium blogging site focused on the absolute intersection of modern aesthetics, seamless web performance, and search engine optimization.</p>
+      </div>
+      <div>
+        <h3 class="footer-title">Navigation</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-title">Contact & Info</h3>
+        <ul class="footer-links">
+          <li>Email: hello@aurablog.com</li>
+          <li>Location: SF, California</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
