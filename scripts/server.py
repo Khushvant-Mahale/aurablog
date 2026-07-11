@@ -8,6 +8,22 @@ import sys
 PORT = 8000
 
 class CustomHandler(http.server.SimpleHTTPRequestHandler):
+    def send_cors_response(self, status, data):
+        self.send_response(status)
+        self.send_header('Content-Type', 'application/json')
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
+        self.end_headers()
+        self.wfile.write(json.dumps(data).encode('utf-8'))
+
+    def do_OPTIONS(self):
+        self.send_response(200)
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
+        self.end_headers()
+
     def do_POST(self):
         if self.path == '/api/publish':
             content_length = int(self.headers['Content-Length'])
@@ -19,9 +35,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                 html_content = data.get('html')
                 
                 if not slug or not html_content:
-                    self.send_response(400)
-                    self.end_headers()
-                    self.wfile.write(json.dumps({"status": "error", "message": "Missing slug or html"}).encode('utf-8'))
+                    self.send_cors_response(400, {"status": "error", "message": "Missing slug or html"})
                     return
                 
                 # Write html page locally
@@ -44,21 +58,15 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                     err_msg = e.stderr.decode('utf-8') if e.stderr else str(e)
                     git_message = f"locally, but git push skipped/failed: {err_msg.strip()}"
                 
-                self.send_response(200)
-                self.send_header('Content-Type', 'application/json')
-                self.end_headers()
-                self.wfile.write(json.dumps({
+                self.send_cors_response(200, {
                     "status": "success",
                     "message": f"Published locally to posts/{slug}.html {git_message}"
-                }).encode('utf-8'))
+                })
                 
             except Exception as e:
-                self.send_response(500)
-                self.end_headers()
-                self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
+                self.send_cors_response(500, {"status": "error", "message": str(e)})
         else:
-            self.send_response(404)
-            self.end_headers()
+            self.send_cors_response(404, {"status": "error", "message": "Endpoint not found"})
 
 # Change working directory to the project root (parent of scripts directory) to serve files correctly
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

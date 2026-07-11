@@ -260,7 +260,11 @@ function initGenerator() {
     logConsole('[SYSTEM] Triggering direct publish via local Python server...', 'info');
 
     try {
-      const response = await fetch('/api/publish', {
+      const publishUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+        ? '/api/publish'
+        : 'http://localhost:8000/api/publish';
+
+      const response = await fetch(publishUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
