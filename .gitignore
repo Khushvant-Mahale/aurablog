@@ -1,14 +1,11 @@
-# Environment variables
+# Local credentials
 .env
-.env.local
 
-# Dependency directories
+# Dependencies and environment caches
 node_modules/
-
-# Python caching
 __pycache__/
 *.pyc
-*.pyo
-.python-version
-.venv/
-venv/
+
+# OS generated files
+.DS_Store
+Thumbs.db
