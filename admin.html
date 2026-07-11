@@ -218,15 +218,20 @@
                 </ol>
               </div>
               
-              <div class="publish-actions" style="margin-top:var(--space-xl); display:flex; gap:var(--space-md);">
-                <button class="btn btn-primary" id="download-post-file-btn">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:6px; vertical-align:middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                  Download Post HTML
+              <div class="publish-actions" style="margin-top:var(--space-xl); display:flex; gap:var(--space-md); flex-wrap:wrap;">
+                <button class="btn btn-primary" id="publish-directly-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px; vertical-align:middle;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                  Publish Directly
+                </button>
+                <button class="btn btn-outline" id="download-post-file-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:6px; vertical-align:middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  Download HTML
                 </button>
                 <button class="btn btn-outline" id="copy-source-code-btn">
                   Copy Source Code
                 </button>
               </div>
+              <div class="alert alert-warning" id="publish-status-banner" style="display:none; margin-top:var(--space-md);"></div>
             </div>
           </div>
         </div>

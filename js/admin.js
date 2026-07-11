@@ -225,9 +225,11 @@ function initGenerator() {
     }
   });
 
-  // Setup downloader and copy triggers
+  // Setup downloader, copy, and publish triggers
   const downloadBtn = document.getElementById('download-post-file-btn');
   const copyBtn = document.getElementById('copy-source-code-btn');
+  const publishDirectlyBtn = document.getElementById('publish-directly-btn');
+  const publishStatusBanner = document.getElementById('publish-status-banner');
 
   downloadBtn.addEventListener('click', () => {
     if (!state.currentPost) return;
@@ -247,6 +249,50 @@ function initGenerator() {
       logConsole('[SYSTEM] Source code copied to clipboard!', 'success');
       alert('Source code copied to clipboard!');
     });
+  });
+
+  publishDirectlyBtn.addEventListener('click', async () => {
+    if (!state.currentPost) return;
+
+    publishDirectlyBtn.disabled = true;
+    publishDirectlyBtn.textContent = 'Publishing...';
+    publishStatusBanner.style.display = 'none';
+    logConsole('[SYSTEM] Triggering direct publish via local Python server...', 'info');
+
+    try {
+      const response = await fetch('/api/publish', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          slug: state.currentPost.topic.slug,
+          html: state.currentPost.html
+        })
+      });
+
+      const result = await response.json();
+      if (response.ok && result.status === 'success') {
+        publishStatusBanner.className = 'alert alert-success';
+        publishStatusBanner.style.background = 'hsla(142, 70%, 50%, 0.1)';
+        publishStatusBanner.style.border = '1px solid hsl(142, 70%, 50%)';
+        publishStatusBanner.style.color = 'var(--text-primary)';
+        publishStatusBanner.innerHTML = `<strong>Success!</strong> ${result.message}`;
+        publishStatusBanner.style.display = 'block';
+        logConsole(`[SYSTEM SUCCESS] ${result.message}`, 'success');
+      } else {
+        throw new Error(result.message || 'Publishing endpoint failed');
+      }
+    } catch (error) {
+      publishStatusBanner.className = 'alert alert-warning';
+      publishStatusBanner.innerHTML = `<strong>Publish skipped/failed:</strong> ${error.message}. Make sure your local server is running by executing 'npm run dev' in your terminal.`;
+      publishStatusBanner.style.display = 'block';
+      logConsole(`[ERROR] Direct publish failed: ${error.message}`, 'error');
+    } finally {
+      publishDirectlyBtn.disabled = false;
+      publishDirectlyBtn.innerHTML = `
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px; vertical-align:middle;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        Publish Directly
+      `;
+    }
   });
 }
 
@@ -571,7 +617,7 @@ function compileHtmlTemplate(topic, bodyHtml, imagePath) {
             <span>•</span>
             <time datetime="${topic.date}">${formattedDate}</time>
             <span>•</span>
-            <span>${topic.estimated_read_time}</span>
+            <span>${topic.estimated_read_time || topic.read_time || '5 min read'}</span>
           </div>
         </header>
 

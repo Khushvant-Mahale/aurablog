@@ -1551,9 +1551,9 @@ footer.site-footer {
   background: none;
   border: none;
   border-bottom: 2px solid transparent;
-  padding: var(--space-md);
+  padding: var(--space-sm) var(--space-xs); /* Reduced padding to fit tabs in a single line */
   font-family: var(--font-heading);
-  font-size: var(--fs-xs);
+  font-size: 11px; /* Slightly smaller size to fit text */
   font-weight: 700;
   color: var(--text-secondary);
   cursor: pointer;
