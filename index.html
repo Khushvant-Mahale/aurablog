@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Primary SEO Meta Tags -->
+<title>AuraBlog | Master Web Design, SEO &amp; Site Performance</title>
+<meta content="Explore expert tutorials, checklists, and guides on modern web design, search engine optimization (SEO), and maximizing Core Web Vitals for blazing-fast speed." name="description"/>
+<meta content="SEO checklist 2026, Core Web Vitals optimization, next-gen web design, site performance, static blogging, search engine ranking" name="keywords"/>
+<link href="https://aurablog.com/" rel="canonical"/>
+<meta content="index, follow" name="robots"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="https://aurablog.com/" property="og:url"/>
+<meta content="AuraBlog | Master Web Design, SEO &amp; Site Performance" property="og:title"/>
+<meta content="Explore expert tutorials, checklists, and guides on modern web design, search engine optimization (SEO), and maximizing Core Web Vitals." property="og:description"/>
+<meta content="https://aurablog.com/assets/og-image.jpg" property="og:image"/>
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://aurablog.com/" name="twitter:url"/>
+<meta content="AuraBlog | Master Web Design, SEO &amp; Site Performance" name="twitter:title"/>
+<meta content="Explore expert tutorials, checklists, and guides on modern web design, search engine optimization (SEO), and maximizing Core Web Vitals." name="twitter:description"/>
+<meta content="https://aurablog.com/assets/og-image.jpg" name="twitter:image"/>
+<!-- Preconnect to Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<!-- Stylesheets -->
+<link href="css/variables.css?v=2" rel="stylesheet"/>
+<link href="css/main.css?v=2" rel="stylesheet"/>
+<!-- Favicon (Inline SVG for instant load & 0 HTTP requests) -->
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;rect width='100' height='100' rx='20' fill='%236366f1'/&gt;&lt;path d='M30 70V30l40 40V30' stroke='white' stroke-width='10' stroke-linecap='round' stroke-linejoin='round' fill='none'/&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<!-- JSON-LD Structured Data for Website Search & Publisher -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AuraBlog",
+    "url": "https://aurablog.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://aurablog.com/?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AuraBlog",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://aurablog.com/assets/logo.png"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+<!-- Navigation Header -->
+<header class="navbar-wrapper">
+<div class="container navbar">
+<a class="nav-brand" href="index.html" id="logo-link">
+<svg aria-hidden="true" fill="none" height="32" viewbox="0 0 100 100" width="32" xmlns="http://www.w3.org/2000/svg">
+<rect fill="url(#brand-grad)" height="100" rx="24" width="100"></rect>
+<path d="M30 70V30L70 70V30" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="brand-grad" x1="0" x2="100" y1="0" y2="100">
+<stop stop-color="#6366F1"></stop>
+<stop offset="1" stop-color="#06B6D4"></stop>
+</lineargradient>
+</defs>
+</svg>
+<span>Aura</span>Blog
+      </a>
+<nav aria-label="Main Navigation">
+<ul class="nav-menu">
+<li><a class="nav-link active" href="index.html">Home</a></li>
+<li><a class="nav-link" href="about.html">About</a></li>
+<li><a class="nav-link" href="contact.html">Contact</a></li>
+</ul>
+</nav>
+<div class="nav-controls">
+<!-- Theme Toggle Button -->
+<button aria-label="Toggle theme" class="theme-toggle-btn" id="theme-toggle">
+<svg aria-hidden="true" class="sun-icon" viewbox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.01c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"></path></svg>
+<svg aria-hidden="true" class="moon-icon" viewbox="0 0 24 24"><path d="M9.37 5.51c-.18-.64-.9-1-1.54-.82-.64.18-1 .9-.82 1.54 1.41 4.97 6 8.52 11.37 8.52.64 0 1.28-.06 1.9-.17.65-.11 1.09-.72.98-1.37-.11-.64-.72-1.09-1.37-.98-.5.09-1.02.14-1.54.14-4.52 0-8.24-3.41-8.98-7.83z"></path></svg>
+</button>
+<!-- Mobile Navigation Menu Toggle Button -->
+<button aria-label="Toggle navigation drawer" class="mobile-menu-btn" id="mobile-toggle">
+<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="24">
+<line x1="3" x2="21" y1="12" y2="12"></line>
+<line x1="3" x2="21" y1="6" y2="6"></line>
+<line x1="3" x2="21" y1="18" y2="18"></line>
+</svg>
+</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section aria-labelledby="hero-title" class="hero container fade-in">
+<span class="hero-subtitle">Optimize &amp; Perform</span>
+<h1 class="hero-title" id="hero-title">Master the Art of <span>SEO &amp; Web Design</span></h1>
+<p class="hero-description">Discover articles, guides, and practical breakdowns detailing modern web strategies that increase visibility, boost organic traffic, and secure 100/100 Core Web Vitals.</p>
+<!-- Interactive Search -->
+<div class="search-container">
+<input aria-label="Search articles" class="search-input" placeholder="Search articles by title or keyword..." type="text"/>
+<span aria-hidden="true" class="search-icon">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20">
+<circle cx="11" cy="11" r="8"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+</span>
+</div>
+<!-- Tag Filters -->
+<div aria-label="Filter posts by category" class="tag-filters">
+<button class="filter-btn active" data-tag="all" id="tag-all">All Articles</button>
+<button class="filter-btn" data-tag="SEO" id="tag-seo">SEO</button>
+<button class="filter-btn" data-tag="Web Design" id="tag-design">Web Design</button>
+<button class="filter-btn" data-tag="Performance" id="tag-performance">Performance</button>
+</div>
+</section>
+<!-- Top Leaderboard Ad Slot (Highest SEO layout styling) -->
+<div class="container fade-in" style="animation-delay: 0.1s;">
+<div aria-label="Advertisement Banner" class="ad-slot ad-leaderboard">
+<span class="ad-slot-dimensions">728 x 90 (Leaderboard)</span>
+</div>
+</div>
+<!-- 2-Column Articles Grid & Sidebar Section -->
+<section aria-labelledby="articles-heading" class="container fade-in" style="animation-delay: 0.2s;">
+<h2 class="section-title" id="articles-heading">Featured Insights</h2>
+<div class="layout-grid">
+<!-- Left Side: Main content posts grid -->
+<div class="main-content">
+<div class="posts-grid" style="grid-template-columns: repeat(auto-fill, minmax(285px, 1fr)); margin-bottom: 0;"><article class="post-card">
+<div class="post-card-img-wrapper">
+<img alt="Mastering INP: The New Core Web Vital" class="post-card-img" src="assets/images/mastering-inp-core-web-vitals.jpg" style="width:100%; height:100%; object-fit:cover;"/>
+</div>
+<div class="post-card-content">
+<div class="post-card-meta">
+<span class="post-card-tag">Performance</span>
+<span>•</span>
+<time datetime="2026-07-11">July 11, 2026</time>
+</div>
+<h3 class="post-card-title"><a href="posts/mastering-inp-core-web-vitals.html">Mastering INP: The New Core Web Vital</a></h3>
+<p class="post-card-excerpt">Learn how to optimize Interaction to Next Paint (INP) to boost your website speed and Google search rankings.</p>
+<div class="post-card-footer">
+<span class="post-card-author">
+<svg height="24" style="display:inline-block; vertical-align:middle; margin-right:4px;" viewbox="0 0 100 100" width="24"><circle cx="50" cy="50" fill="#6366F1" r="50"></circle><text dominant-baseline="middle" fill="white" font-family="Outfit" font-size="30" font-weight="700" text-anchor="middle" x="50" y="55">AZ</text></svg>
+                    Alex Zen
+                  </span>
+<span>5 min read</span>
+</div>
+</div>
+</article><article class="post-card">
+<div class="post-card-img-wrapper">
+<img alt="Optimizing CSS for Zero Cumulative Layout Shift (CLS)" class="post-card-img" src="assets/images/css-cls-optimization-guide.jpg" style="width:100%; height:100%; object-fit:cover;"/>
+</div>
+<div class="post-card-content">
+<div class="post-card-meta">
+<span class="post-card-tag">Performance</span>
+<span>•</span>
+<time datetime="2026-07-11">July 11, 2026</time>
+</div>
+<h3 class="post-card-title"><a href="posts/css-cls-optimization-guide.html">Optimizing CSS for Zero Cumulative Layout Shift (CLS)</a></h3>
+<p class="post-card-excerpt">A deep dive into CSS techniques, aspect-ratio definitions, and dynamic element rendering rules to eliminate layout shifts.</p>
+<div class="post-card-footer">
+<span class="post-card-author">
+<svg height="24" style="display:inline-block; vertical-align:middle; margin-right:4px;" viewbox="0 0 100 100" width="24"><circle cx="50" cy="50" fill="#6366F1" r="50"></circle><text dominant-baseline="middle" fill="white" font-family="Outfit" font-size="30" font-weight="700" text-anchor="middle" x="50" y="55">AZ</text></svg>
+                    Alex Zen
+                  </span>
+<span>7 min read</span>
+</div>
+</div>
+</article><article class="post-card">
+<div class="post-card-img-wrapper">
+<img alt="Designing for Dark Mode: HSL Custom Property Strategies" class="post-card-img" src="assets/images/hsl-dark-mode-design-tokens.jpg" style="width:100%; height:100%; object-fit:cover;"/>
+</div>
+<div class="post-card-content">
+<div class="post-card-meta">
+<span class="post-card-tag">Web Design</span>
+<span>•</span>
+<time datetime="2026-07-11">July 11, 2026</time>
+</div>
+<h3 class="post-card-title"><a href="posts/hsl-dark-mode-design-tokens.html">Designing for Dark Mode: HSL Custom Property Strategies</a></h3>
+<p class="post-card-excerpt">Learn to manage colors, borders, and overlays across responsive themes with HSL tailored variables and custom style properties.</p>
+<div class="post-card-footer">
+<span class="post-card-author">
+<svg height="24" style="display:inline-block; vertical-align:middle; margin-right:4px;" viewbox="0 0 100 100" width="24"><circle cx="50" cy="50" fill="#06B6D4" r="50"></circle><text dominant-baseline="middle" fill="white" font-family="Outfit" font-size="30" font-weight="700" text-anchor="middle" x="50" y="55">SR</text></svg>
+                    Sarah Rose
+                  </span>
+<span>5 min read</span>
+</div>
+</div>
+</article>
+<!-- Post Card 1 (SEO) -->
+<article class="post-card">
+<div class="post-card-img-wrapper">
+<svg aria-hidden="true" class="post-card-img" fill="none" height="100%" viewbox="0 0 400 225" width="100%" xmlns="http://www.w3.org/2000/svg">
+<rect fill="url(#grad-seo)" height="225" width="400"></rect>
+<circle cx="200" cy="112.5" fill="white" fill-opacity="0.1" r="50" stroke="white" stroke-width="2"></circle>
+<path d="M150 142.5 L190 102.5 L215 122.5 L250 82.5" stroke="url(#accent-grad)" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path>
+<circle cx="250" cy="82.5" fill="#06B6D4" r="6"></circle>
+<text dominant-baseline="middle" fill="white" font-family="Outfit" font-size="20" font-weight="800" letter-spacing="1" text-anchor="middle" x="50%" y="80%">SEO CHECKLIST</text>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="grad-seo" x1="0" x2="400" y1="0" y2="225">
+<stop stop-color="#1E1B4B"></stop>
+<stop offset="1" stop-color="#311042"></stop>
+</lineargradient>
+<lineargradient gradientunits="userSpaceOnUse" id="accent-grad" x1="150" x2="250" y1="142.5" y2="82.5">
+<stop stop-color="#6366F1"></stop>
+<stop offset="1" stop-color="#06B6D4"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<div class="post-card-content">
+<div class="post-card-meta">
+<span class="post-card-tag">SEO</span>
+<span>•</span>
+<time datetime="2026-07-10">July 10, 2026</time>
+</div>
+<h3 class="post-card-title"><a href="posts/seo-checklist-2026.html">The Ultimate High-SEO Website Audit Checklist</a></h3>
+<p class="post-card-excerpt">A comprehensive, step-by-step checklist to optimize your website for indexing, clean rendering, dynamic crawlers, and top rank performance in search engines.</p>
+<div class="post-card-footer">
+<span class="post-card-author">
+<svg aria-hidden="true" height="24" viewbox="0 0 100 100" width="24"><circle cx="50" cy="50" fill="#6366F1" r="50"></circle><text dominant-baseline="middle" fill="white" font-family="Outfit" font-size="30" font-weight="700" text-anchor="middle" x="50" y="55">AZ</text></svg>
+                    Alex Zen
+                  </span>
+<span>8 min read</span>
+</div>
+</div>
+</article>
+<!-- Post Card 2 (Web Design) -->
+<article class="post-card">
+<div class="post-card-img-wrapper">
+<svg aria-hidden="true" class="post-card-img" fill="none" height="100%" viewbox="0 0 400 225" width="100%" xmlns="http://www.w3.org/2000/svg">
+<rect fill="url(#grad-design)" height="225" width="400"></rect>
+<rect fill="white" fill-opacity="0.05" height="100" rx="10" stroke="white" stroke-width="2" width="160" x="120" y="62.5"></rect>
+<circle cx="140" cy="77.5" fill="#EF4444" r="4"></circle>
+<circle cx="150" cy="77.5" fill="#F59E0B" r="4"></circle>
+<circle cx="160" cy="77.5" fill="#10B981" r="4"></circle>
+<line stroke="white" stroke-linecap="round" stroke-width="4" x1="130" x2="200" y1="100" y2="100"></line>
+<line stroke="white" stroke-linecap="round" stroke-width="4" x1="130" x2="240" y1="115" y2="115"></line>
+<line stroke="white" stroke-linecap="round" stroke-width="4" x1="130" x2="180" y1="130" y2="130"></line>
+<circle cx="230" cy="120" fill="url(#brand-grad)" fill-opacity="0.8" r="24"></circle>
+<text dominant-baseline="middle" fill="white" font-family="Outfit" font-size="20" font-weight="800" letter-spacing="1" text-anchor="middle" x="50%" y="80%">NEXT-GEN DESIGN</text>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="grad-design" x1="0" x2="400" y1="0" y2="225">
+<stop stop-color="#0F172A"></stop>
+<stop offset="1" stop-color="#1E293B"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<div class="post-card-content">
+<div class="post-card-meta">
+<span class="post-card-tag">Web Design</span>
+<span>•</span>
+<time datetime="2026-07-08">July 8, 2026</time>
+</div>
+<h3 class="post-card-title"><a href="posts/next-gen-web-design.html">Next-Gen Web Design: Blending Aesthetics with Speed</a></h3>
+<p class="post-card-excerpt">Learn how modern design aesthetics like glassmorphism, responsive micro-interactions, and custom typography can coexist with high SEO rankings and quick load times.</p>
+<div class="post-card-footer">
+<span class="post-card-author">
+<svg aria-hidden="true" height="24" viewbox="0 0 100 100" width="24"><circle cx="50" cy="50" fill="#06B6D4" r="50"></circle><text dominant-baseline="middle" fill="white" font-family="Outfit" font-size="30" font-weight="700" text-anchor="middle" x="50" y="55">SR</text></svg>
+                    Sarah Rose
+                  </span>
+<span>6 min read</span>
+</div>
+</div>
+</article>
+<!-- Post Card 3 (Performance) -->
+<article class="post-card">
+<div class="post-card-img-wrapper">
+<svg aria-hidden="true" class="post-card-img" fill="none" height="100%" viewbox="0 0 400 225" width="100%" xmlns="http://www.w3.org/2000/svg">
+<rect fill="url(#grad-perf)" height="225" width="400"></rect>
+<path d="M100 140 A 100 100 0 0 1 300 140" fill="none" stroke="white" stroke-linecap="round" stroke-opacity="0.1" stroke-width="12"></path>
+<path d="M100 140 A 100 100 0 0 1 260 80" fill="none" stroke="url(#perf-accent)" stroke-linecap="round" stroke-width="12"></path>
+<line stroke="white" stroke-linecap="round" stroke-width="8" x1="200" x2="250" y1="130" y2="70"></line>
+<circle cx="200" cy="130" fill="white" r="16"></circle>
+<text dominant-baseline="middle" fill="white" font-family="Outfit" font-size="20" font-weight="800" letter-spacing="1" text-anchor="middle" x="50%" y="82%">100 LIGHTHOUSE</text>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="grad-perf" x1="0" x2="400" y1="0" y2="225">
+<stop stop-color="#022C22"></stop>
+<stop offset="1" stop-color="#064E3B"></stop>
+</lineargradient>
+<lineargradient gradientunits="userSpaceOnUse" id="perf-accent" x1="100" x2="260" y1="140" y2="80">
+<stop stop-color="#10B981"></stop>
+<stop offset="1" stop-color="#34D399"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<div class="post-card-content">
+<div class="post-card-meta">
+<span class="post-card-tag">Performance</span>
+<span>•</span>
+<time datetime="2026-07-05">July 5, 2026</time>
+</div>
+<h3 class="post-card-title"><a href="posts/maximizing-core-web-vitals.html">Maximizing Core Web Vitals: A Deep Dive into Page Speed</a></h3>
+<p class="post-card-excerpt">A technical walkthrough detailing strategies to optimize LCP, INP, and CLS scores to earn an elite rating on Google's search algorithms.</p>
+<div class="post-card-footer">
+<span class="post-card-author">
+<svg aria-hidden="true" height="24" viewbox="0 0 100 100" width="24"><circle cx="50" cy="50" fill="#10B981" r="50"></circle><text dominant-baseline="middle" fill="white" font-family="Outfit" font-size="30" font-weight="700" text-anchor="middle" x="50" y="55">AZ</text></svg>
+                    Alex Zen
+                  </span>
+<span>10 min read</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- Right Side: Sticky Ad-Monetized Sidebar -->
+<aside aria-label="Sidebar Content" class="sidebar">
+<!-- Sidebar Author Profile Widget -->
+<div class="sidebar-widget author-widget">
+<div class="author-widget-avatar">
+<svg aria-hidden="true" fill="none" height="40" viewbox="0 0 100 100" width="40" xmlns="http://www.w3.org/2000/svg">
+<circle cx="50" cy="50" fill="#6366F1" r="50"></circle>
+<text dominant-baseline="middle" fill="white" font-family="Outfit" font-size="30" font-weight="700" text-anchor="middle" x="50" y="55">AZ</text>
+</svg>
+</div>
+<div class="author-widget-name">Alex Zen</div>
+<p class="author-widget-bio">Technical SEO auditor, page speed developer, and lead publisher for AuraBlog.</p>
+</div>
+<!-- Sidebar Medium Rectangle Ad Slot -->
+<div class="sidebar-widget" style="padding: 0; background: none; border: none; box-shadow: none;">
+<div aria-label="Advertisement Rectangle Slot" class="ad-slot ad-rectangle">
+<span class="ad-slot-dimensions">300 x 250 (Medium Rectangle)</span>
+</div>
+</div>
+<!-- Trending / Popular Posts Widget -->
+<div class="sidebar-widget">
+<h3 class="sidebar-widget-title">Trending Now</h3>
+<ol class="popular-posts-list">
+<li class="popular-posts-item">
+<span class="popular-posts-rank">1</span>
+<a class="popular-posts-link" href="posts/seo-checklist-2026.html">The Ultimate High-SEO Website Audit Checklist</a>
+</li>
+<li class="popular-posts-item">
+<span class="popular-posts-rank">2</span>
+<a class="popular-posts-link" href="posts/maximizing-core-web-vitals.html">Maximizing Core Web Vitals: A Deep Dive into Page Speed</a>
+</li>
+<li class="popular-posts-item">
+<span class="popular-posts-rank">3</span>
+<a class="popular-posts-link" href="posts/next-gen-web-design.html">Next-Gen Web Design: Blending Aesthetics with Speed</a>
+</li>
+</ol>
+</div>
+</aside>
+</div>
+</section>
+<!-- Newsletter Card Section -->
+<section aria-labelledby="newsletter-heading" class="container fade-in">
+<div class="newsletter-card">
+<h2 class="newsletter-title" id="newsletter-heading">Stay Ahead of the Algorithm</h2>
+<p class="newsletter-desc">Subscribe to our newsletter to receive the latest SEO strategies, CSS designs, and web performance optimization directly in your inbox. No spam, unsubscribe anytime.</p>
+<form class="newsletter-form" id="newsletter-form-home">
+<input aria-label="Email address" placeholder="Enter your email address" required="" type="email"/>
+<button class="btn btn-primary" id="subscribe-btn-home" type="submit">Subscribe</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer Section -->
+<footer class="site-footer">
+<div class="container footer-grid">
+<div>
+<div class="footer-brand"><span>Aura</span>Blog</div>
+<p class="footer-desc">A premium blogging site focused on the absolute intersection of modern aesthetics, seamless web performance, and search engine optimization.</p>
+</div>
+<div>
+<h3 class="footer-title">Navigation</h3>
+<ul class="footer-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="privacy.html">Privacy Policy</a></li>
+<li><a href="sitemap.xml">Sitemap</a></li>
+</ul>
+</div>
+<div>
+<h3 class="footer-title">Contact &amp; Info</h3>
+<ul class="footer-links">
+<li><a href="contact.html">Send a Message</a></li>
+<li>Email: hello@aurablog.com</li>
+<li>Location: SF, California</li>
+</ul>
+</div>
+</div>
+<div class="container footer-bottom">
+<p>© 2026 AuraBlog. Built for maximum SEO. All rights reserved.</p>
+<p>Theme: Modern Glassmorphic</p>
+</div>
+</footer>
+<!-- Cookie Consent compliance Banner -->
+<div aria-label="Cookie Consent Banner" class="cookie-banner hidden" id="cookie-banner" role="region">
+<div class="container cookie-banner-content">
+<p class="cookie-banner-text">We use cookies to personalize content, ads, and to analyze traffic. By clicking "Accept All", you agree to our use of cookies. Read our <a href="privacy.html">Privacy Policy</a>.</p>
+<div class="cookie-banner-actions">
+<button class="btn btn-primary cookie-banner-btn cookie-banner-accept-btn" id="cookie-accept">Accept All</button>
+</div>
+</div>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+name: Automated AI Blog Writer
+
+on:
+  schedule:
+    # Runs every Monday at 08:00 UTC
+    - cron: '0 8 * * 1'
+  workflow_dispatch: # Allows you to trigger it manually from GitHub Actions UI
+
+jobs:
+  write-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Generator Script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+        run: python scripts/generate_blog.py
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "AuraBlog AI Writer"
+          git config --global user.email "ai-writer@aurablog.com"
+          git add .
+          # Check if there are changes to commit to prevent errors
+          if ! git diff-index --quiet HEAD; then
+            git commit -m "Auto-published new trending article [skip ci]"
+            git push
+          else
+            echo "No new articles created."
+          fi

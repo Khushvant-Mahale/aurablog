@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!-- Homepage -->
+<url>
+<loc>https://aurablog.com/</loc>
+<lastmod>2026-07-11</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1.0</priority>
+</url>
+<!-- About Page -->
+<url>
+<loc>https://aurablog.com/about.html</loc>
+<lastmod>2026-07-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<!-- Contact Page -->
+<url>
+<loc>https://aurablog.com/contact.html</loc>
+<lastmod>2026-07-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<!-- Privacy Policy Page -->
+<url>
+<loc>https://aurablog.com/privacy.html</loc>
+<lastmod>2026-07-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<!-- Blog Post 1: SEO Audit Checklist -->
+<url>
+<loc>https://aurablog.com/posts/seo-checklist-2026.html</loc>
+<lastmod>2026-07-10</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<!-- Blog Post 2: Next-Gen Web Design -->
+<url>
+<loc>https://aurablog.com/posts/next-gen-web-design.html</loc>
+<lastmod>2026-07-08</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<!-- Blog Post 3: Core Web Vitals -->
+<url>
+<loc>https://aurablog.com/posts/maximizing-core-web-vitals.html</loc>
+<lastmod>2026-07-05</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url><loc>https://aurablog.com/posts/css-cls-optimization-guide.html</loc><lastmod>2026-07-11</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url><url><loc>https://aurablog.com/posts/hsl-dark-mode-design-tokens.html</loc><lastmod>2026-07-11</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url><url><loc>https://aurablog.com/posts/mastering-inp-core-web-vitals.html</loc><lastmod>2026-07-11</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url></urlset>

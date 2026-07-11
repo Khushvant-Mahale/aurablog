@@ -1,0 +1,14 @@
+# Environment variables
+.env
+.env.local
+
+# Dependency directories
+node_modules/
+
+# Python caching
+__pycache__/
+*.pyc
+*.pyo
+.python-version
+.venv/
+venv/

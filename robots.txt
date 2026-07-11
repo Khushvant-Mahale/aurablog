@@ -1,0 +1,12 @@
+# robots.txt for AuraBlog
+# Crawling rules for search engine bots
+
+User-agent: *
+Allow: /
+
+# Exclude any mock dynamic paths if needed, e.g. administrative paths
+Disallow: /admin/
+Disallow: /private/
+
+# Link to the sitemap file
+Sitemap: https://aurablog.com/sitemap.xml

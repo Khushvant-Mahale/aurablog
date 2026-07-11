@@ -1,0 +1,106 @@
+/* CSS Custom Properties for AuraBlog */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  /* Fonts */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Typography Scale */
+  --fs-xs: 0.75rem;     /* 12px */
+  --fs-sm: 0.875rem;    /* 14px */
+  --fs-base: 1rem;      /* 16px */
+  --fs-md: 1.125rem;    /* 18px */
+  --fs-lg: 1.25rem;     /* 20px */
+  --fs-xl: 1.5rem;      /* 24px */
+  --fs-2xl: 1.875rem;   /* 30px */
+  --fs-3xl: 2.25rem;    /* 36px */
+  --fs-4xl: 3rem;       /* 48px */
+
+  /* Spacing */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Border Radius */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Layout */
+  --max-width-content: 720px;
+  --max-width-grid: 1200px;
+}
+
+/* Light Theme Variables */
+:root, [data-theme="light"] {
+  --bg-primary: hsl(210, 33%, 99%);
+  --bg-secondary: hsl(210, 40%, 96%);
+  --bg-card: hsla(0, 0%, 100%, 0.75);
+  
+  --border-color: hsla(210, 30%, 80%, 0.4);
+  --border-glow: hsla(210, 30%, 80%, 0.8);
+  
+  --text-primary: hsl(220, 40%, 13%);
+  --text-secondary: hsl(220, 15%, 40%);
+  --text-tertiary: hsl(220, 10%, 60%);
+  
+  --primary: hsl(250, 100%, 60%);
+  --primary-hover: hsl(250, 95%, 55%);
+  --primary-light: hsla(250, 100%, 60%, 0.1);
+  
+  --accent: hsl(190, 100%, 42%);
+  --accent-hover: hsl(190, 95%, 38%);
+  
+  --success: hsl(145, 80%, 40%);
+  --error: hsl(355, 80%, 55%);
+
+  --shadow-sm: 0 2px 8px -2px hsla(220, 40%, 20%, 0.05);
+  --shadow-md: 0 8px 30px -10px hsla(220, 40%, 20%, 0.08);
+  --shadow-lg: 0 16px 40px -12px hsla(220, 40%, 20%, 0.12);
+  
+  --backdrop-blur: 12px;
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+  --bg-primary: hsl(222, 47%, 7%);
+  --bg-secondary: hsl(222, 47%, 4%);
+  --bg-card: hsla(222, 47%, 10%, 0.65);
+  
+  --border-color: hsla(217, 30%, 60%, 0.12);
+  --border-glow: hsla(217, 100%, 65%, 0.35);
+  
+  --text-primary: hsl(210, 40%, 98%);
+  --text-secondary: hsl(215, 20%, 75%);
+  --text-tertiary: hsl(215, 12%, 55%);
+  
+  --primary: hsl(250, 95%, 68%);
+  --primary-hover: hsl(250, 100%, 75%);
+  --primary-light: hsla(250, 95%, 68%, 0.15);
+  
+  --accent: hsl(190, 100%, 45%);
+  --accent-hover: hsl(190, 100%, 55%);
+  
+  --success: hsl(145, 75%, 45%);
+  --error: hsl(355, 85%, 60%);
+
+  --shadow-sm: 0 2px 8px -2px hsla(0, 0%, 0%, 0.25);
+  --shadow-md: 0 8px 30px -10px hsla(0, 0%, 0%, 0.4);
+  --shadow-lg: 0 16px 40px -12px hsla(0, 0%, 0%, 0.5);
+  
+  --backdrop-blur: 16px;
+}

@@ -1,0 +1,12 @@
+{
+  "name": "aurablog",
+  "version": "1.0.0",
+  "description": "High-SEO modern static blogging website",
+  "scripts": {
+    "dev": "npx http-server -p 8000"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
