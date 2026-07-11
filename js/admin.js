@@ -209,6 +209,7 @@ function initGenerator() {
       // Store in state
       state.currentPost = {
         topic,
+        imagePath,
         html: fullPageHtml
       };
 
@@ -269,7 +270,9 @@ function initGenerator() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           slug: state.currentPost.topic.slug,
-          html: state.currentPost.html
+          html: state.currentPost.html,
+          topic: state.currentPost.topic,
+          imagePath: state.currentPost.imagePath
         })
       });
 

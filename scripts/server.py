@@ -5,6 +5,9 @@ import os
 import subprocess
 import sys
 
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+from generate_blog import inject_homepage_card, append_sitemap_url
+
 PORT = 8000
 
 class CustomHandler(http.server.SimpleHTTPRequestHandler):
@@ -43,12 +46,22 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                 file_path = os.path.join('posts', f"{slug}.html")
                 with open(file_path, 'w', encoding='utf-8') as f:
                     f.write(html_content)
+
+                # Inject post card into index.html and update sitemap.xml
+                topic = data.get('topic')
+                image_path = data.get('imagePath')
+                if topic and image_path:
+                    try:
+                        inject_homepage_card(topic, image_path)
+                        append_sitemap_url(topic['slug'], topic['date'])
+                    except Exception as inject_err:
+                        print(f"Warning: Failed to inject elements: {str(inject_err)}")
                 
                 # Auto git commit and push
                 git_message = ""
                 try:
-                    # Stage
-                    subprocess.run(['git', 'add', file_path], check=True, capture_output=True)
+                    # Stage (add posts page, index.html, and sitemap.xml)
+                    subprocess.run(['git', 'add', file_path, 'index.html', 'sitemap.xml'], check=True, capture_output=True)
                     # Commit
                     subprocess.run(['git', 'commit', '-m', f"Auto-publish post: {slug}"], check=True, capture_output=True)
                     # Push
