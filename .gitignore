@@ -1,11 +1,16 @@
-# Local credentials
+# Local environment variables containing private API keys
 .env
 
-# Dependencies and environment caches
-node_modules/
-__pycache__/
-*.pyc
-
-# OS generated files
-.DS_Store
+# System / Temp files
 Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Log files
+*.log
+.system_generated/
+
+# Dependency folders
+node_modules/
+dist/
+build/
