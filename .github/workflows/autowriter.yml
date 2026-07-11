@@ -9,6 +9,8 @@ on:
 jobs:
   write-and-publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Allows pushing the generated blog post commits
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
