@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Mastering INP: The New Core Web Vital | AuraBlog</title>
-  <meta name="description" content="Learn how to optimize Interaction to Next Paint (INP) to boost your website speed, user experience, and Google search rankings.">
+  <title>Mastering INP: Boost Your Core Web Vitals | AuraBlog</title>
+  <meta name="description" content="Learn how to optimize Interaction to Next Paint (INP) to improve user experience and boost your site's search rankings.">
   <link rel="canonical" href="https://aurablog.com/posts/mastering-inp-core-web-vitals.html">
   <meta name="robots" content="index, follow">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://aurablog.com/posts/mastering-inp-core-web-vitals.html">
-  <meta property="og:title" content="Mastering INP: The New Core Web Vital | AuraBlog">
-  <meta property="og:description" content="Learn how to optimize Interaction to Next Paint (INP) to boost your website speed, user experience, and Google search rankings.">
+  <meta property="og:title" content="Mastering INP: Boost Your Core Web Vitals | AuraBlog">
+  <meta property="og:description" content="Learn how to optimize Interaction to Next Paint (INP) to improve user experience and boost your site's search rankings.">
   <meta property="og:image" content="https://aurablog.com/assets/images/mastering-inp-core-web-vitals.jpg">
   
   <!-- Stylesheets -->
@@ -32,11 +32,11 @@
     "@type": "WebPage",
     "@id": "https://aurablog.com/posts/mastering-inp-core-web-vitals.html"
   },
-  "headline": "Mastering INP: The New Core Web Vital",
-  "description": "Learn how to optimize Interaction to Next Paint (INP) to boost your website speed, user experience, and Google search rankings.",
+  "headline": "Mastering INP: Boost Your Core Web Vitals",
+  "description": "Learn how to optimize Interaction to Next Paint (INP) to improve user experience and boost your site's search rankings.",
   "image": "https://aurablog.com/assets/images/mastering-inp-core-web-vitals.jpg",
-  "datePublished": "2026-08-17T08:00:00+00:00",
-  "dateModified": "2026-08-17T08:00:00+00:00",
+  "datePublished": "2026-09-07T08:00:00+00:00",
+  "dateModified": "2026-09-07T08:00:00+00:00",
   "author": {
     "@type": "Person",
     "name": "Alex Zen",
@@ -110,86 +110,25 @@
       <article class="main-content">
         <header class="article-header">
           <span class="article-category">Performance</span>
-          <h1 class="article-title">Mastering INP: The New Core Web Vital</h1>
+          <h1 class="article-title">Mastering INP: Boost Your Core Web Vitals</h1>
           <div class="article-meta">
             <div class="article-author-info">
               <svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="50" fill="#6366F1"/><text x="50" y="55" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="Outfit" font-size="30" font-weight="700">AZ</text></svg>
               <span>Alex Zen</span>
             </div>
             <span>•</span>
-            <time datetime="2026-08-17">August 17, 2026</time>
+            <time datetime="2026-09-07">September 07, 2026</time>
             <span>•</span>
             <span>5 min read</span>
           </div>
         </header>
 
         <!-- Hero Image -->
-        <img class="article-hero-image" src="../assets/images/mastering-inp-core-web-vitals.jpg" alt="Mastering INP: The New Core Web Vital" width="800" height="450">
+        <img class="article-hero-image" src="../assets/images/mastering-inp-core-web-vitals.jpg" alt="Mastering INP: Boost Your Core Web Vitals" width="800" height="450">
 
         <!-- Content Body -->
         <div class="article-content">
-          <p>On March 12, 2024, Google officially retired First Input Delay (FID) and ushered in Interaction to Next Paint (INP) as a core metric for measuring page responsiveness. While FID only captured the delay before the browser began processing the very first user interaction, INP tracks the entire latency of all clicks, taps, and keyboard inputs throughout the user's journey on a page. Mastering INP is no longer an optional optimization strategy; it is a critical requirement for keeping users engaged, boosting organic search visibility, and maximizing conversion rates on modern web applications.</p>
-
-<h2>The Anatomy of an Interaction</h2>
-<p>To systematically optimize INP, developers must understand that an interaction does not happen instantaneously. When a user clicks a button, submits a form, or toggles an accordion, the journey to the next visual update is broken down into three distinct phases:</p>
-
-<ul>
-  <li><strong>Input Delay:</strong> The time between when the user initiates an interaction and when the browser's main thread is free to start executing the event handlers. This is often caused by long-running background tasks or main-thread congestion.</li>
-  <li><strong>Processing Duration:</strong> The cumulative execution time of all JavaScript event listeners registered for that specific interaction.</li>
-  <li><strong>Presentation Delay:</strong> The time it takes for the browser to recalculate the page layout, style the elements, paint the pixels, and physically composite the frame on the screen.</li>
-</ul>
-
-<p>Your goal as a developer is to minimize the sum of these three phases. While a good FID score was relatively easy to achieve even on bloated sites, a good INP score (defined as 200 milliseconds or less) requires rigorous performance discipline across both JS execution and browser rendering pathways.</p>
-
-<h2>Diagnostic Tools: Pinpointing INP Bottlenecks</h2>
-<p>Unlike metrics like Largest Contentful Paint (LCP), which can be easily simulated in synthetic "lab" environments, INP is highly dependent on real user behavior. Therefore, monitoring field data is paramount. Developers should leverage the <code>web-vitals</code> JavaScript library to log real-user INP performance directly to their analytics suites. For local debugging, the Chrome DevTools Performance panel is invaluable. By recording a profile while interacting with a page, you can pinpoint "Long Tasks" (tasks exceeding 50ms) that block the main thread and visualize exactly which event listeners are delaying the next paint.</p>
-
-<h2>Optimizing the Main Thread: Yielding to the Browser</h2>
-<p>The most common culprit behind poor INP is long-running JavaScript execution inside event handlers. If a user clicks a "Filter Results" button, and the browser has to synchronously filter thousands of items and rebuild the DOM, the main thread will lock up, driving up presentation delay. The solution is to yield execution back to the browser's main thread. This allows the browser to render the updated UI (like a loading spinner) before continuing with the heavy computation.</p>
-
-<p>Below is a modern JavaScript pattern demonstrating how to break up long tasks and yield to the main thread using an asynchronous yielding utility:</p>
-
-<pre><code>// Utility to yield execution back to the main thread
-function yieldToMain() {
-  return new Promise(resolve =&gt; {
-    // Fall back to setTimeout if scheduler.yield is not yet supported
-    if ('scheduler' in window &amp;&amp; 'yield' in window.scheduler) {
-      return scheduler.yield().then(resolve);
-    }
-    setTimeout(resolve, 0);
-  });
-}
-
-// Optimized event handler
-async function handleFilterClick(event) {
-  // Phase 1: Provide immediate visual feedback (e.g., show spinner)
-  showLoadingIndicator();
-
-  // Yield here so the browser can paint the loading spinner immediately
-  await yieldToMain();
-
-  // Phase 2: Perform the heavy computation in chunks
-  const results = filterLargeDataset();
-  
-  // Yield again to prevent the UI from freezing during render preparation
-  await yieldToMain();
-
-  // Phase 3: Render the final results
-  renderResults(results);
-  hideLoadingIndicator();
-}</code></pre>
-
-<p>By splitting monolithic execution blocks into smaller tasks interspersed with micro-yields, you prevent the main thread from choking. The browser can seamlessly interleave style and layout calculations, rendering the next paint long before the entire task sequence is finished.</p>
-
-<blockquote>
-  "Performance is not just about making things load fast; it is about respecting the user's attention and creating a fluid digital medium that responds to human intent without friction."
-</blockquote>
-
-<h2>CSS and Layout Optimizations</h2>
-<p>While JavaScript optimizations target processing duration, the browser's rendering engine often causes presentation delay. When you dynamically inject large chunks of HTML or alter layout-triggering properties (like <code>width</code>, <code>height</code>, or <code>top</code>), you force the browser to execute costly style recalculations and layout passes. To mitigate this, developers should utilize CSS properties like <code>content-visibility: auto</code> to skip rendering off-screen elements. Furthermore, whenever you must perform animations, prioritize compositor-only properties like <code>transform</code> and <code>opacity</code>, which bypass the layout and paint stages entirely, ensuring a near-instant next paint.</p>
-
-<h2>Conclusion: The Path Forward</h2>
-<p>Mastering INP requires a paradigm shift. We must move away from evaluating page speed purely through static load times and instead embrace dynamic, runtime responsiveness. Designers must design interfaces with instant-feedback states, developers must write non-blocking, asynchronous code, and SEO specialists must monitor field telemetry to ensure algorithmic changes don't catch them off guard. By prioritizing the lifecycle of user interactions, you build websites that do not just look fast on load, but feel incredibly fast to use.</p>
+          <p>Error generating content body. Topic was: Mastering INP: Boost Your Core Web Vitals. Please check your API key configuration.</p>
         </div>
 
         <!-- Article Footer -->
